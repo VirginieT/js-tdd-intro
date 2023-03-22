@@ -34,6 +34,22 @@ assert.strictEqual(capitalizeFirst(''), '');
 
 //! CAPITALIZE FIRST LETTER OF EACH WORD IN A STRING
 
+const capitalizeFirstLetters = (input) => {
+  if (input.length === 0) {
+    return '';
+  }
+  const words = input.split(' ');
+  let result = '';
+  for (let i = 0; i < words.length; i++) {
+    result += capitalizeFirst(words[i]);
+    if (i < words.length - 1) {
+      result += ' ';
+    }
+  }
+  return result;
+};
+console.log(capitalizeFirstLetters('je suis pas venue ici pour souffrir okay ?!'));
+
 
 /* Commence par créer les tests, avec au moins trois cas de test :
 une chaîne avec plusieurs mots
